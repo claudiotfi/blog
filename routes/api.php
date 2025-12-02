@@ -9,3 +9,11 @@ Route::post('/admin/logout', [AuthController::class, 'logout'])->middleware('aut
 Route::get('/admin/me', function () {
     return auth()->user();
 })->middleware('auth:sanctum');
+
+Route::middleware(['auth:sanctum'])->prefix('admin')->group(function() {
+
+    Route::get('/posts', [PostController::class, 'index']);
+    Route::get('/categories', [CategoryController::class, 'index']);
+
+});
+

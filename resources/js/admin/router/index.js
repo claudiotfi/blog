@@ -11,12 +11,16 @@ const routes = [
         component: Login,
         meta: { guest: true }
     },
-
     { 
         path: '/admin',
         name: 'dashboard',
         component: Dashboard,
         meta: { requiresAuth: true }
+    },
+    {
+        path: "/admin/posts",
+        name: "posts.index",
+        component: () => import("../pages/Posts/PostsIndex.vue")
     },
 ]
 
