@@ -20,7 +20,7 @@ const routes = [
     {
         path: "/admin/posts",
         name: "posts.index",
-        component: () => import("../pages/Posts/PostsIndex.vue")
+        component: () => import("../pages/posts/PostsIndex.vue")
     },
 ]
 
