@@ -1,6 +1,6 @@
-import axios from 'axios';
+import axios from 'axios'
 
-axios.defaults.withCredentials = true;
-axios.defaults.baseURL = '/api';
+axios.defaults.withCredentials = true
+axios.defaults.baseURL = 'http://localhost' // se necessário
 
-export default axios;
+export default axios

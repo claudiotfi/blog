@@ -31,19 +31,17 @@ const router = createRouter({
 
 // 🔐 Guarda de navegação para proteger rotas
 router.beforeEach(async (to, from, next) => {
-
-    // Rotas que não precisam de login
     if (to.meta.guest) {
         return next()
     }
 
-    // Testa se usuário está autenticado
     try {
-        await axios.get('/admin/me')
+        await axios.get('/api/admin/me', { withCredentials: true })
         return next()
     } catch (err) {
         return next('/admin/login')
     }
 })
+
 
 export default router
