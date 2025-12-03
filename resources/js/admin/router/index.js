@@ -22,6 +22,17 @@ const routes = [
         name: "posts.index",
         component: () => import("../pages/posts/PostsIndex.vue")
     },
+    {
+        path: "/admin/posts/create",
+        name: "posts.create",
+        component: () => import("../pages/posts/PostCreate.vue")
+    },
+    {
+        path: "/admin/posts/:id/edit",
+        name: "posts.edit",
+        component: () => import("../pages/posts/PostEdit.vue")
+    },
+
 ]
 
 const router = createRouter({
@@ -36,12 +47,11 @@ router.beforeEach(async (to, from, next) => {
     }
 
     try {
-        await axios.get('/api/admin/me', { withCredentials: true })
+        await axios.get('/admin/me', { withCredentials: true })
         return next()
     } catch (err) {
         return next('/admin/login')
     }
 })
-
 
 export default router

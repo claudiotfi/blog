@@ -1,20 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\Posts\PostController;
 use App\Http\Controllers\Admin\CategoryController;
 
-// Auth do administrador
-Route::post('/admin/login', [AuthController::class, 'login']);
-Route::post('/admin/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
-
-Route::get('/admin/me', function () {
-    return auth()->user();
-})->middleware('auth:sanctum');
-
-
-// Rotas protegidas do painel admin
+// Rotas protegidas do painel admin via SPA
 Route::middleware(['auth:sanctum'])->prefix('admin')->group(function () {
 
     // POSTS

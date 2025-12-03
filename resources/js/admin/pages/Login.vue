@@ -1,6 +1,6 @@
 <script setup>
+import axios from 'axios'
 import { ref } from 'vue'
-import axios from '../axios'
 import { useRouter } from 'vue-router'
 
 const email = ref('')
@@ -12,16 +12,18 @@ const login = async () => {
     error.value = ''
 
     try {
-        // 1. Primeiro requisita o CSRF cookie
-        await axios.get('/sanctum/csrf-cookie')
+        // 1. Pega CSRF token
+        await axios.get('/sanctum/csrf-cookie', { baseURL: '/' })
 
-        // 2. Agora tenta fazer login
+        // 2. Faz login na API correta
         await axios.post('/admin/login', {
             email: email.value,
             password: password.value
-        })
+        }, { withCredentials: true })
 
-        router.push('/admin') // redireciona para o dashboard
+        // 3. Redireciona para o dashboard
+        router.push('/admin')
+
     } catch (err) {
         error.value = 'Credenciais inválidas'
     }

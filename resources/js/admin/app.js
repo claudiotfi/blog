@@ -1,13 +1,10 @@
-import axios from 'axios'
-axios.defaults.withCredentials = true
+import axios from './axios'  // pega o axios configurado
 
 import { createApp } from 'vue'
 import router from './router'
 import App from './App.vue'
 
-// Obrigatório para Sanctum funcionar com SPA
-axios.defaults.withCredentials = true
-axios.defaults.baseURL = '/api'
+// axios já está configurado no arquivo axios.js
 
 createApp(App)
     .use(router)
