@@ -2,11 +2,12 @@
 
 @section('title', 'Histórias que vivem além da imaginação')
 @section('tagline', ' Um universo de contos fictícios e narrativas que desafiam a realidade ')
+@section('hero-align', 'text-center')
 
 @section('content')
     <main class="max-w-7xl mx-auto px-4 py-16">
 
-        <h2 class="text-3xl font-bold mb-10">Últimos Contos</h2>
+        <h2 class="text-3xl font-bold mb-10 ms-6">Últimos Contos</h2>
 
         <!-- GRID DE POSTS -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

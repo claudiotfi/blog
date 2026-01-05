@@ -4,10 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
         <title>@yield('title', 'Meu Blog')</title>
-
-        <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link
             href="https://fonts.googleapis.com/css2?family=Arizonia&family=Comforter+Brush&family=Italianno&display=swap"
@@ -39,9 +36,9 @@
                 </div>
 
                 <!-- SEARCH -->
-                <div class="relative hidden md:block opacity-75">
+                <div class="relative hidden md:block opacity-50">
                     <input type="text" placeholder="Pesquisar contos..."
-                        class="pl-10 pr-4 py-2 rounded-xl bg-transparent border border-white text-white placeholder-white placeholder-opacity-100 focus:outline-none focus:ring-2 focus:ring-white">
+                        class="pl-10 pr-4 py-2 rounded-2xl bg-transparent border border-white text-white placeholder-white placeholder-opacity-100 focus:outline-none focus:ring-2 focus:ring-white">
                     <svg class="w-5 h-5 absolute left-3 top-2.5 text-white" fill="none" stroke="currentColor"
                         stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -53,12 +50,13 @@
 
         <!-- HERO -->
         <section class="bg-gradient-to-r from-rose-950 via-rose-700 to-rose-950 text-white">
-            <div class="max-w-7xl mx-auto px-4 py-20 text-center">
-                <h1 class="text-4xl md:text-5xl font-extrabold mb-6">
+            <div class="max-w-7xl mx-auto px-4 py-20">
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-6 @yield('hero-align', 'text-start')">
                     @yield('title', 'Contos de Medo')
                 </h1>
+
                 @if (View::hasSection('tagline'))
-                    <p class="text-lg max-w-2xl mx-auto opacity-90">
+                    <p class="text-lg max-w-7xl opacity-90 @yield('hero-align', 'text-start')">
                         @yield('tagline')
                     </p>
                 @endif
@@ -74,7 +72,7 @@
 
                 <!-- SOBRE -->
                 <div>
-                    <h4 class="text-white font-bold text-lg mb-4">Contos de Medo</h4>
+                    <h4 class="text-white font-bold text-xl mb-4">Contos de Medo</h4>
                     <p class="text-sm leading-relaxed">
                         Um espaço dedicado à criação e publicação de fábulas fictícias, contos e universos
                         imaginários.
@@ -83,7 +81,7 @@
 
                 <!-- CATEGORIAS -->
                 <div>
-                    <h4 class="text-white font-bold mb-4">Categorias</h4>
+                    <h4 class="text-white text-xl font-bold mb-4">Categorias</h4>
                     <ul class="space-y-2 text-sm">
                         <li><a href="{{ url('fantasia') }}" class="hover:text-white">Fantasia</a></li>
                         <li><a href="{{ url('ficcao') }}" class="hover:text-white">Ficção</a></li>
@@ -94,7 +92,7 @@
 
                 <!-- INSTITUCIONAL -->
                 <div>
-                    <h4 class="text-white font-bold mb-4">Institucional</h4>
+                    <h4 class="text-white text-xl font-bold mb-4">Institucional</h4>
                     <ul class="space-y-2 text-sm">
                         <li><a href="{{ url('sobre') }}" class="hover:text-white">Sobre o Site</a></li>
                         <li><a href="{{ url('autor') }}" class="hover:text-white">Sobre o Autor</a></li>
@@ -106,7 +104,7 @@
 
                 <!-- REDES SOCIAIS -->
                 <div>
-                    <h4 class="text-white font-bold mb-4">Siga-nos</h4>
+                    <h4 class="text-white text-xl font-bold mb-4">Siga-nos</h4>
                     <div class="flex gap-4">
                         <a href="#" class="hover:text-white">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
