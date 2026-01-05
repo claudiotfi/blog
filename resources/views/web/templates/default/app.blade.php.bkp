@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>@yield('title', 'Meu Blog')</title>
+
+        @vite(['resources/css/web/templates/default/app.css', 'resources/js/web/default/app.js'])
+
+        {{-- Fundo estilo papel envelhecido --}}
+        <style>
+            body {
+                background-color: #f5f1e8;
+                background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px,
+                        transparent 1px);
+                background-size: 4px 4px;
+            }
+        </style>
+    </head>
+
+    <body class="text-zinc-800 antialiased leading-relaxed">
+
+        {{-- Menu principal --}}
+        <header class="sticky top-0 z-50 border-b border-zinc-200 bg-[#f5f1e8]/80 backdrop-blur">
+            @include('web.templates.default.components.menu')
+        </header>
+
+        {{-- Header opcional (hero, título da página, etc.) --}}
+        @hasSection('header')
+            <section class="border-b border-zinc-200">
+                @include('web.templates.default.components.header')
+            </section>
+        @endif
+
+        {{-- Conteúdo --}}
+        <main class="max-w-6xl mx-auto px-4 py-10 md:py-14">
+            @yield('content')
+        </main>
+
+        {{-- Footer --}}
+        <footer class="border-t border-zinc-200 mt-20">
+            @include('web.templates.default.components.footer')
+        </footer>
+
+    </body>
+
+</html>

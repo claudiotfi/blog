@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Tom de papel envelhecido + leve textura -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@700;900&display=swap');
+        body {
+            background-color: #f5f1e8;
+            background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px);
+            background-size: 4px 4px;
+        }
+    </style>
+</head>
+
+<body class="text-zinc-800 antialiased">
+
+<!-- Header / Menu -->
+<header class="border-b border-zinc-200 bg-[#f5f1e8]/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+        <h1 class="text-xl font-serif font-semibold tracking-wide">
+            Meu Blog
+        </h1>
+
+        <nav class="flex gap-6 text-sm font-medium">
+            <a href="#" class="hover:text-zinc-600 transition">Home</a>
+            <a href="#" class="hover:text-zinc-600 transition">Sobre</a>
+            <a href="#" class="hover:text-zinc-600 transition">Contato</a>
+        </nav>
+    </div>
+</header>
+
+<!-- Conteúdo -->
+<main class="max-w-6xl mx-auto px-4 py-10">
+
+    <!-- Artigo em destaque -->
+    <section class="mb-16">
+        <article class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <span class="text-xs uppercase tracking-widest text-zinc-500">
+                    Artigo mais recente
+                </span>
+
+                <h2 class="mt-3 text-3xl md:text-4xl font-serif font-bold leading-tight">
+                    O impacto do minimalismo no desenvolvimento web moderno
+                </h2>
+
+                <p class="mt-4 text-zinc-700 leading-relaxed">
+                    Uma reflexão sobre como menos interfaces, menos JavaScript e mais foco no conteúdo
+                    podem melhorar drasticamente a experiência do usuário.
+                </p>
+
+                <div class="mt-6 flex items-center gap-4 text-sm text-zinc-500">
+                    <span>12 de Dezembro, 2025</span>
+                    <span class="hidden md:inline">•</span>
+                    <span class="hidden md:inline">8 min de leitura</span>
+                </div>
+
+                <a href="#" class="inline-block mt-6 text-sm font-medium underline underline-offset-4 hover:text-zinc-600">
+                    Ler artigo →
+                </a>
+            </div>
+
+            <div class="hidden md:block">
+                <img
+                    src="https://via.placeholder.com/600x400"
+                    alt="Thumbnail do artigo"
+                    class="rounded-lg shadow-sm"
+                >
+            </div>
+        </article>
+    </section>
+
+    <!-- Lista de artigos -->
+    <section class="space-y-10">
+        <article class="flex flex-col md:flex-row gap-6">
+            <img
+                src="https://via.placeholder.com/240x160"
+                alt="Thumbnail"
+                class="w-full md:w-60 h-40 object-cover rounded-md"
+            >
+
+            <div>
+                <h3 class="text-xl font-serif font-semibold">
+                    Blade vs SPA: quando a simplicidade vence
+                </h3>
+
+                <p class="mt-2 text-zinc-700 text-sm leading-relaxed">
+                    Nem todo projeto precisa de uma SPA. Em muitos casos, Blade resolve melhor,
+                    com menos complexidade e mais performance.
+                </p>
+
+                <div class="mt-3 text-xs text-zinc-500">
+                    05 de Dezembro, 2025
+                </div>
+            </div>
+        </article>
+
+        <article class="flex flex-col md:flex-row gap-6">
+            <img
+                src="https://via.placeholder.com/240x160"
+                alt="Thumbnail"
+                class="w-full md:w-60 h-40 object-cover rounded-md"
+            >
+
+            <div>
+                <h3 class="text-xl font-serif font-semibold">
+                    Estruturando projetos Laravel para crescer sem dor
+                </h3>
+
+                <p class="mt-2 text-zinc-700 text-sm leading-relaxed">
+                    Uma proposta de organização de controllers, views e assets para projetos
+                    que começam simples, mas precisam escalar.
+                </p>
+
+                <div class="mt-3 text-xs text-zinc-500">
+                    28 de Novembro, 2025
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <!-- Paginação -->
+    <div class="mt-16 flex justify-center">
+        <nav class="flex items-center gap-2 text-sm">
+            <a href="#" class="px-3 py-1 border border-zinc-300 rounded hover:bg-zinc-200 transition">
+                ← Anterior
+            </a>
+
+            <span class="px-3 py-1 bg-zinc-800 text-white rounded">
+                1
+            </span>
+
+            <a href="#" class="px-3 py-1 border border-zinc-300 rounded hover:bg-zinc-200 transition">
+                2
+            </a>
+
+            <a href="#" class="px-3 py-1 border border-zinc-300 rounded hover:bg-zinc-200 transition">
+                Próximo →
+            </a>
+        </nav>
+    </div>
+
+</main>
+
+<!-- Footer -->
+<footer class="border-t border-zinc-200 mt-20">
+    <div class="max-w-6xl mx-auto px-4 py-8 text-center text-xs text-zinc-500">
+        © 2025 — Meu Blog. Todos os direitos reservados.
+    </div>
+</footer>
+
+</body>
+</html>
+
