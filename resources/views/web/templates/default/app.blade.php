@@ -11,28 +11,28 @@
     <body class="bg-gray-50 text-gray-800">
 
         <!-- HEADER -->
-        <header class="bg-white shadow-sm sticky top-0 z-50">
+        <header class="bg-black text-gray-200 shadow-sm sticky top-0 z-50">
             <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
 
                 <!-- LOGO -->
                 <div class="flex items-center gap-3">
-                    <img src="logo.png" alt="Logo" class="h-10 w-auto">
+                    <img src="{{ asset('storage/contos-de-medo.png') }}" alt="Logo" class="h-10 w-auto">
                     <span class="text-xl font-bold tracking-tight">Contos de Medo</span>
                 </div>
 
                 <!-- MENU -->
                 <nav class="hidden md:flex gap-6 font-medium">
-                    <a href="#" class="hover:text-rose-800">Início</a>
-                    <a href="#" class="hover:text-rose-800">contos</a>
-                    <a href="#" class="hover:text-rose-800">Autores</a>
-                    <a href="#" class="hover:text-rose-800">Sobre</a>
+                    <a href="{{ url('/') }}" class="hover:text-rose-800">Início</a>
+                    <a href="{{ url('artigos') }}" class="hover:text-rose-800">Contos</a>
+                    <a href="{{ url('autor') }}" class="hover:text-rose-800">Autor</a>
+                    <a href="{{ url('sobre') }}" class="hover:text-rose-800">Sobre</a>
                 </nav>
 
                 <!-- SEARCH -->
                 <div class="relative hidden md:block">
                     <input type="text" placeholder="Pesquisar contos..."
-                        class="pl-10 pr-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-rose-950">
-                    <svg class="w-5 h-5 absolute left-3 top-2.5 text-gray-400" fill="none" stroke="currentColor"
+                        class="pl-10 pr-4 py-2 rounded-full bg-transparent border border-gray-500 focus:outline-none focus:ring-2 focus:ring-rose-950">
+                    <svg class="w-5 h-5 absolute left-3 top-2.5 text-gray-500" fill="none" stroke="currentColor"
                         stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z" />
@@ -62,53 +62,75 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
                 <!-- CARD -->
-                <article class="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+                <article
+                    class="group bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden cursor-pointer">
                     <img src="https://picsum.photos/600/400?random=1" alt="" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <span class="text-sm text-rose-800 font-semibold">Fantasia</span>
-                        <h3 class="text-xl font-bold mt-2 mb-3">
-                            O Reino Esquecido do Norte
+
+                    <div class="px-6">
+                        <a href="#" class="text-sm text-rose-800 font-semibold block mt-6 mb-3">Fantasia</a>
+                        <h3 class="text-xl font-bold leading-snug group-hover:text-rose-800 transition">
+                            <a href="#">
+                                O Reino Esquecido do Norte
+                            </a>
                         </h3>
-                        <p class="text-gray-600 mb-4">
-                            Uma jornada épica por terras congeladas onde lendas ainda respiram.
-                        </p>
-                        <a href="#" class="font-semibold text-rose-800 hover:underline">
-                            Ler conto →
+                        <a href="#" class="flex items-start justify-between gap-4 mt-2 mb-3">
+                            <span class="text-gray-600">
+                                Uma jornada épica por terras congeladas onde lendas ainda respiram.
+                            </span>
+                            <span class="mt-1 text-rose-800 transform transition group-hover:translate-x-1">
+                                →
+                            </span>
                         </a>
+
                     </div>
                 </article>
 
+
                 <!-- CARD -->
-                <article class="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+                <article
+                    class="group bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden cursor-pointer">
                     <img src="https://picsum.photos/600/400?random=2" alt="" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <span class="text-sm text-rose-800 font-semibold">Mistério</span>
-                        <h3 class="text-xl font-bold mt-2 mb-3">
-                            O Sussurro das Sombras
+
+                    <div class="px-6">
+                        <a href="#" class="text-sm text-rose-800 font-semibold block mt-6 mb-3">Fantasia</a>
+                        <h3 class="text-xl font-bold leading-snug group-hover:text-rose-800 transition">
+                            <a href="#">
+                                O Reino Esquecido do Norte
+                            </a>
                         </h3>
-                        <p class="text-gray-600 mb-4">
-                            Nem toda verdade quer ser descoberta.
-                        </p>
-                        <a href="#" class="font-semibold text-rose-800 hover:underline">
-                            Ler conto →
+                        <a href="#" class="flex items-start justify-between gap-4 mt-2 mb-3">
+                            <span class="text-gray-600">
+                                Uma jornada épica por terras congeladas onde lendas ainda respiram.
+                            </span>
+                            <span class="mt-1 text-rose-800 transform transition group-hover:translate-x-1">
+                                →
+                            </span>
                         </a>
+
                     </div>
                 </article>
 
                 <!-- CARD -->
-                <article class="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+                <article
+                    class="group bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden cursor-pointer">
                     <img src="https://picsum.photos/600/400?random=3" alt="" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <span class="text-sm text-rose-800 font-semibold">Sci-Fi</span>
-                        <h3 class="text-xl font-bold mt-2 mb-3">
-                            Além das Estrelas
+
+                    <div class="px-6">
+                        <a href="#" class="text-sm text-rose-800 font-semibold block mt-6 mb-3">Fantasia</a>
+                        <h3 class="text-xl font-bold leading-snug group-hover:text-rose-800 transition">
+                            <a href="#">
+                                O Reino Esquecido do Norte
+                            </a>
                         </h3>
-                        <p class="text-gray-600 mb-4">
-                            Quando a humanidade ultrapassa seus próprios limites.
-                        </p>
-                        <a href="#" class="font-semibold text-rose-800 hover:underline">
-                            Ler conto →
+                        <a href="#" class="flex items-start justify-between gap-4 mt-2 mb-3">
+                            <span class="text-gray-600">
+                                Uma jornada épica por terras congeladas onde lendas ainda respiram.
+                            </span>
+                            <span class="mt-1 text-rose-800 transform transition group-hover:translate-x-1">
+                                →
+                            </span>
                         </a>
+
                     </div>
                 </article>
 
@@ -132,10 +154,10 @@
                 <div>
                     <h4 class="text-white font-bold mb-4">Categorias</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="hover:text-white">Fantasia</a></li>
-                        <li><a href="#" class="hover:text-white">Ficção</a></li>
-                        <li><a href="#" class="hover:text-white">Mistério</a></li>
-                        <li><a href="#" class="hover:text-white">Terror</a></li>
+                        <li><a href="{{ url('fantasia') }}" class="hover:text-white">Fantasia</a></li>
+                        <li><a href="{{ url('ficcao') }}" class="hover:text-white">Ficção</a></li>
+                        <li><a href="{{ url('misterio') }}" class="hover:text-white">Mistério</a></li>
+                        <li><a href="{{ url('terror') }}" class="hover:text-white">Terror</a></li>
                     </ul>
                 </div>
 
@@ -143,9 +165,10 @@
                 <div>
                     <h4 class="text-white font-bold mb-4">Institucional</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="hover:text-white">Sobre nós</a></li>
-                        <li><a href="#" class="hover:text-white">Política de Privacidade</a></li>
-                        <li><a href="#" class="hover:text-white">Contato</a></li>
+                        <li><a href="{{ url('sobre') }}" class="hover:text-white">Sobre</a></li>
+                        <li><a href="{{ url('politica-de-privacidade') }}" class="hover:text-white">Política de
+                                Privacidade</a></li>
+                        <li><a href="{{ url('contato') }}" class="hover:text-white">Contato</a></li>
                     </ul>
                 </div>
 
